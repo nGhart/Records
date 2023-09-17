@@ -4,57 +4,6 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
 const SignupForm = () => {
-  // const [email, setEmail] = useState('');
-  // const [name, setName] = useState('');
-  // const [password, setPassword] = useState('');
-  // const [confirmPassword, setConfirmPassword] = useState('');
-  // const [message, setMessage] = useState('');
-  // const [number1, setNumber1] = useState('');
-  // const [number2, setNumber2] = useState('');
-  // const [building, setBuilding] = useState('');
-  // const [street, setStreet] = useState('');
-  // const [city, setCity] = useState('');
-  // const [pic, setPic] = useState(
-  //   'https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg'
-  // );
-  // const [picMessage, setPicMessage] = useState('');
-  // const [country, setCountry] = useState('');
-
-  // const navigate = useNavigate();
-  // const dispatch = useDispatch();
-
-  // const userRegister = useSelector((state) => state.userRegister);
-  // const { loading, error, userInfo } = userRegister;
-
-  // useEffect(() => {
-  //   if (userInfo) {
-  //     navigate('/');
-  //   }
-  // }, [navigate]);
-
-  // const submitHandler = async (e) => {
-  //   e.preventDefault();
-  //   if (password !== confirmPassword) {
-  //     setMessage('Enter same password');
-  //   } else {
-  //     dispatch(
-  //       register(
-  //         name,
-  //         email,
-  //         number1,
-  //         number2,
-  //         building,
-  //         street,
-  //         city,
-  //         country,
-  //         pic,
-  //         password
-  //       )
-  //     );
-  //     navigate('/');
-  //   }
-  // };
-
   // const postDetails = (e) => {
   //   const file = e.target.files[0];
   //   if (!file) {

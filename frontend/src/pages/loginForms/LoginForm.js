@@ -22,10 +22,6 @@ const LoginForm = () => {
   //   }
   // }, [navigate, userInfo]);
 
-  // const submitHandler = async (e) => {
-  //   e.preventDefault();
-  //   dispatch(login(email, password));
-  // };
   return (
     <h1>login</h1>
     // <div>

@@ -28,6 +28,7 @@ import InventoryPage from './pages/inventoryPage/InventoryPage';
 import HealthPage from './pages/healthPage/HealthPage';
 import TransactionPage from './pages/transactionPage/TransactionPage';
 import MedicationPage from './pages/medicationPage/MedicationPage';
+import MyNotes from './pages/notesPage/notesPage';
 
 const Layout = () => {
   return (
@@ -49,12 +50,12 @@ const Layout = () => {
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
-      <Route path="/" element={<Layout />}>
-        <Route path="/" element={<Home />} />
+      <Route path="/home" element={<Layout />}>
+        <Route path="/home" element={<Home />} />
         <Route path="rabbits" element={<RabbitPage />}>
           {/* <Route path="animals/:id" element={<RabbitTable />} /> */}
         </Route>
-        <Route path="notes" element={<LogoutPage />} />
+
         <Route path="contact" element={<ContactPage />} />
         <Route path="invoice" element={<InvoicePage />} />
         <Route path="employee" element={<EmployeePage />} />
@@ -73,12 +74,13 @@ const router = createBrowserRouter(
         <Route path="inventory" element={<InventoryPage />} />
         <Route path="medication" element={<MedicationPage />} />
         <Route path="health" element={<HealthPage />} />
+        <Route path="notes" element={<MyNotes />} />
         <Route path="transaction" element={<TransactionPage />} />
       </Route>
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<SignupPage />} />
       <Route path="/logout" element={<LogoutPage />} />
-      <Route path="/landing" element={<Landing />} />
+      <Route path="/" element={<Landing />} />
       <Route path="/print" element={<Print />} />
     </>
   )

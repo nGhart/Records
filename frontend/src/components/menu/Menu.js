@@ -60,6 +60,10 @@ const Menu = () => {
           <i className="fas fa-home"></i>
           <span className="listItemTitle">Contacts</span>
         </Link>
+        <Link to="notes" className="listItem">
+          <i className="fas fa-user-alt"></i>
+          <span className="listItemTitle">Notes</span>
+        </Link>
       </div>
     </div>
   );

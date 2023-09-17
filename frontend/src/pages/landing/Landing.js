@@ -5,7 +5,7 @@ const Landing = () => {
   //  useEffect(() => {
   //    const userInfo = localStorage.getItem('userInfo');
   //    if (userInfo) {
-  //      navigate('/');
+  //      navigate('/home');
   //    }
   //  }, [navigate]);
   return (

@@ -30,13 +30,15 @@ const Navigation = () => {
           <Link to="profile"></Link>
           <span>{userLogin.userinfo.name}</span>
         </div> */}
-        {/* <Link to="/logout"> */}
-        <button
-        //onClick={logOut}
-        >
-          Log Out
-        </button>
-        {/* </Link> */}
+        <Link to="/">
+          <button
+            onClick={() => {
+              localStorage.removeItem('userInfo');
+            }}
+          >
+            Log Out
+          </button>
+        </Link>
       </div>
     </div>
   );

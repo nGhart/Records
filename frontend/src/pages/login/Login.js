@@ -33,6 +33,7 @@ const Login = () => {
       console.log(data);
       localStorage.setItem('userInfo', JSON.stringify(data));
       setLoading(false);
+      navigate('/home');
     } catch (error) {
       setError(error.response.data.message);
       setLoading(false);

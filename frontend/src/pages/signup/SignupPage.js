@@ -5,7 +5,6 @@ import Form from 'react-bootstrap/Form';
 import ErrorPage from '../../components/error/ErrorPage';
 import Loading from '../../components/loading/Loading';
 import axios from 'axios';
-import { response } from 'express';
 
 const SignupPage = () => {
   const [email, setEmail] = useState('');
@@ -25,6 +24,35 @@ const SignupPage = () => {
   const [country, setCountry] = useState('');
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
+
+  const postDetails = (e) => {
+    const file = e.target.files[0];
+    if (!file) {
+      return setPicMessage('Upload image');
+    }
+    setPicMessage(null);
+
+    if (file.type === 'image/jpeg' || file.type === 'image/png') {
+      const data = new FormData();
+      data.append('file', file);
+      data.append('upload_preset', 'rabbitRecords');
+      data.append('cloud_name', 'dquz47ysg');
+      fetch('https://api.cloudinary.com/v1_1/dquz47ysg/image/upload', {
+        method: 'post',
+        body: data,
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          setPic(data.url.toString());
+        })
+        .catch((error) => {
+          console.error('Fetch Error:', error);
+        });
+    } else {
+      setPicMessage('Upload a .png or .jpeg file');
+    }
+  };
 
   const submitHandler = async (e) => {
     e.preventDefault();
@@ -218,13 +246,13 @@ const SignupPage = () => {
                 <Form.Control
                   type="file"
                   name="pic"
-                  //onChange={postDetails}
+                  onChange={postDetails}
                   //isInvalid={!!errors.file}
                 />
-                {/* 
-              {picMessage && (
-                <ErrorPage variant="danger">{picMessage}</ErrorPage>
-              )} */}
+
+                {picMessage && (
+                  <ErrorPage variant="danger">{picMessage}</ErrorPage>
+                )}
               </Form.Group>
               <Button type="submit">Sign Up</Button>
             </Form>

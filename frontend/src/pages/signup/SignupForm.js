@@ -4,34 +4,34 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
 const SignupForm = () => {
-  // const postDetails = (e) => {
-  //   const file = e.target.files[0];
-  //   if (!file) {
-  //     return setPicMessage('Upload image');
-  //   }
-  //   setPicMessage(null);
+  const postDetails = (e) => {
+    const file = e.target.files[0];
+    if (!file) {
+      return setPicMessage('Upload image');
+    }
+    setPicMessage(null);
 
-  //   if (file.type === 'image/jpeg' || file.type === 'image/png') {
-  //     const data = new FormData();
-  //     data.append('file', file);
-  //     data.append('upload_preset', 'rabbitRecords');
-  //     data.append('cloud_name', 'dquz47ysg');
-  //     fetch('https://api.cloudinary.com/v1_1/dquz47ysg/image/upload', {
-  //       method: 'post',
-  //       body: data,
-  //     })
-  //       .then((res) => res.json())
-  //       .then((data) => {
-  //         console.log(data);
-  //         setPic(data.url.toString());
-  //       })
-  //       .catch((error) => {
-  //         console.error('Fetch Error:', error);
-  //       });
-  //   } else {
-  //     setPicMessage('Upload a .png or .jpeg file');
-  //   }
-  // };
+    if (file.type === 'image/jpeg' || file.type === 'image/png') {
+      const data = new FormData();
+      data.append('file', file);
+      data.append('upload_preset', 'rabbitRecords');
+      data.append('cloud_name', 'dquz47ysg');
+      fetch('https://api.cloudinary.com/v1_1/dquz47ysg/image/upload', {
+        method: 'post',
+        body: data,
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          setPic(data.url.toString());
+        })
+        .catch((error) => {
+          console.error('Fetch Error:', error);
+        });
+    } else {
+      setPicMessage('Upload a .png or .jpeg file');
+    }
+  };
 
   return (
     // <div>
